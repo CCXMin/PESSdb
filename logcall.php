@@ -21,12 +21,6 @@
 		array_push($incidentTypes, $incidentType);
 	}
 	$conn->close();
-
-	/*$typeofIncident = $_POST['typeofIncident'];
-	if ($typeofIncident == 'Select') {
-		echo "test2";
-	}*/
-
 ?>
 
 
@@ -44,7 +38,7 @@
 		<!-- Create section container to place web form-->
 		<section style="margin-top: 20px">
 		<!-- Create web form with Caller Name, Contact Number, Location of Incident, Type of Incident, Description of Incident input fields -->
-		<form action="dispatch.php" method="post" onsubmit="myFunction()">
+		<form action="dispatch.php" name="fform" method="post" action="/cgi-bin/articles/development/javascript/form-validation-with-javascript/contact_simple.cgi" onsubmit="return validate_form();">
 			
 			<!-- Row for Caller Name label and texbox input -->
 			<div class="form-group row">
@@ -107,9 +101,14 @@
 			<!-- End of web form -->
 		</form>
 		<!-- End of section -->
-		<script>
-		function myFunction() {
-  			alert("The form was submitted");
+		<script type="text/javascript">
+			function validate_form() {
+    			valid = true;
+			if (document.fform.typeofIncident.value == 'Select') {
+        		alert ( "Please select Type of Incident." );
+        		valid = false;
+   			 }
+   			return valid;
 		}
 		</script>
 	</section>
