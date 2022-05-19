@@ -21,6 +21,12 @@
 		array_push($incidentTypes, $incidentType);
 	}
 	$conn->close();
+
+	/*$typeofIncident = $_POST['typeofIncident'];
+	if ($typeofIncident == 'Select') {
+		echo "test2";
+	}*/
+
 ?>
 
 
@@ -38,7 +44,7 @@
 		<!-- Create section container to place web form-->
 		<section style="margin-top: 20px">
 		<!-- Create web form with Caller Name, Contact Number, Location of Incident, Type of Incident, Description of Incident input fields -->
-		<form action="dispatch.php" method="post">
+		<form action="dispatch.php" method="post" onsubmit="myFunction()">
 			
 			<!-- Row for Caller Name label and texbox input -->
 			<div class="form-group row">
@@ -70,7 +76,7 @@
 				<label for="typeofIncident" class="col-lg-4 col-form-label">Type of Incident (Required)</label>
 				<div class="col-lg-8">
 					<select name="typeofIncident" class="form-control" id="typeofIncident">
-						<option required>Select</option>
+						<option>Select</option>
 						<?php
 						//using for loop to retrieve the data from array var incidentType 
 							for ($i = 0; $i < count($incidentTypes); $i++) {
@@ -101,6 +107,11 @@
 			<!-- End of web form -->
 		</form>
 		<!-- End of section -->
+		<script>
+		function myFunction() {
+  			alert("The form was submitted");
+		}
+		</script>
 	</section>
 	<!-- Footer -->
 	<footer class="page-footer font-small blue pt-4 footer-copyright text-center py-3">
