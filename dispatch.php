@@ -209,7 +209,12 @@ if ($btnDispatchClicked == true) {
 				<div class="form-group row">
 					<div class="col-sm-4"></div>
 					<div class="col-sm-8" style="text-align: center;">
-						<input type="submit" name="btnDispatch" class="btn btn-primary" value="Dispatch">
+						<input type="submit" name="btnDispatch" class="btn btn-primary" value="Dispatch" button onclick="myFunction()">
+						<script>
+                            function myFunction() {
+                            alert("Patrol Car has been Dispatched!");
+                            }
+                        </script>
 					</div>
 				</div>
 
