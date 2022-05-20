@@ -166,7 +166,7 @@ if ($btnUpdateClicked == true) {
                     <div class="form-group row">
                         <div class="col-lg-4"></div>
                         <div class="col-lg-8">
-                            <input class="btn btn-primary" type="submit" name="btnUpdate" value="Update" button onclick="myFunction()"></button>
+                            <input class="btn btn-primary" type="submit" name="btnUpdate" value="Update" button onclick="myFunction()">
                             <script>
                             function myFunction() {
                             alert("Status for Patrol Car has been updated to Dispatched.");
